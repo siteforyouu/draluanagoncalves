@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dra. Luana Gonçalves | Estética Avançada &amp; Humanizada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14100d;--ink2:#1d1713;--gold:#d4af6a;--gold-d:#7a5a22;--rose:#c2185b;--rose-l:#f4cfdc;--nude:#f6ede6;--nude2:#ead9cc;--txt:#f6ede6;--txt-d:#2a1f19;
+--script:'Great Vibes','Snell Roundhand',cursive;--sans:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));color-scheme:dark}
+body{margin:0;background:var(--ink);color:var(--txt);font:400 16px/1.65 var(--sans)}
+h1,h2,h3{font-family:var(--script);font-weight:400;margin:0;line-height:1.05}
+h2{font-size:clamp(2.6rem,8vw,4rem);color:var(--gold)}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;display:flex;justify-content:space-between;align-items:center;background:rgba(20,16,13,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,106,.25)}
+nav b{font-family:var(--script);font-weight:400;font-size:1.6rem;color:var(--gold)}
+nav a.btn{padding:8px 16px;font-size:.85rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 26px;border-radius:999px;border:1.5px solid var(--gold);background:var(--gold);color:var(--ink);font:600 .95rem var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,106,.3)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn.rose{background:var(--rose);border-color:var(--rose);color:#fff}
+/* HERO */
+#hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#2b2018 0%,var(--ink) 70%)}
+#c3d{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-in{position:relative;z-index:2;padding:110px 20px 70px;pointer-events:none}
+.hero-in *{pointer-events:auto}
+.mono{font-family:var(--script);font-size:clamp(6rem,26vw,11rem);line-height:.9;color:var(--gold);margin:0;text-shadow:0 0 30px rgba(212,175,106,.45)}
+.mono svg{display:none}
+.hero-in h1{font-size:clamp(2.2rem,8vw,3.8rem);color:var(--nude)}
+.sub{font-size:.95rem;letter-spacing:.04em;color:var(--nude2);margin:14px auto 26px}
+.hero-in .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.fb{position:absolute;inset:0;display:none;background:radial-gradient(circle at 50% 45%,rgba(212,175,106,.25),transparent 55%)}
+.no3d .fb{display:block}
+/* SERVICOS */
+section{padding:84px 0}
+#servicos{background:var(--nude);color:var(--txt-d)}
+#servicos h2{color:var(--rose)}
+.note{font-size:.88rem;border-left:3px solid var(--rose);padding:6px 12px;background:rgba(194,24,91,.07);margin:14px 0 30px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));perspective:900px}
+.card{position:relative;display:block;cursor:pointer;background:#fff;border:2px solid var(--nude2);border-radius:20px;padding:22px;transition:transform .15s ease-out,border-color .2s,box-shadow .2s;transform-style:preserve-3d;box-shadow:0 6px 18px rgba(80,50,30,.08)}
+.card input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.card:has(input:checked){border-color:var(--rose);box-shadow:0 10px 28px rgba(194,24,91,.2);background:#fff7fa}
+.card:has(input:focus-visible){outline:3px solid var(--rose);outline-offset:3px}
+.card h3{font-family:var(--sans);font-weight:600;font-size:1.1rem;margin-bottom:4px;transform:translateZ(24px)}
+.price{display:inline-block;font-weight:600;color:var(--rose);font-size:1.15rem}
+.price.q{font-size:.9rem;color:var(--gold-d)}
+.tick{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;border:2px solid var(--nude2);display:grid;place-items:center;font-size:.9rem;color:#fff;transition:.2s}
+.card:has(input:checked) .tick{background:var(--rose);border-color:var(--rose)}
+.card:has(input:checked) .tick::after{content:"✓"}
+.ico{width:46px;height:46px;margin-bottom:10px;stroke:var(--gold-d);fill:none;stroke-width:1.5;transform:translateZ(30px)}
+.card small{display:block;color:#6b5a50}
+.bar{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:10;margin-top:28px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--ink);color:var(--txt);border:1px solid var(--gold);border-radius:20px;padding:14px 18px}
+.bar span{font-size:.95rem}
+/* SOBRE */
+#sobre{background:var(--ink2)}
+.two{display:grid;gap:36px;align-items:center}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+.ph{border:1.5px dashed var(--gold);border-radius:20px;min-height:220px;display:grid;place-items:center;text-align:center;padding:20px;color:var(--nude2);font-size:.9rem}
+.ph.sq{aspect-ratio:4/5}
+.todo{color:var(--rose-l);font-size:.85rem}
+#gal{background:var(--nude);color:var(--txt-d)}
+#gal h2{color:var(--rose)}
+#gal .ph{color:var(--txt-d);border-color:var(--gold-d)}
+.gg{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+/* AGENDAR */
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.steps li{counter-increment:s;border:1px solid rgba(212,175,106,.4);border-radius:18px;padding:20px}
+.steps li::before{content:counter(s);font-family:var(--script);font-size:2.6rem;color:var(--gold);display:block;line-height:1}
+#local{background:var(--ink2)}
+dl{margin:0;display:grid;gap:14px}
+dt{color:var(--gold);font-weight:600;font-size:.9rem}
+dd{margin:0}
+footer{padding:30px 20px;text-align:center;font-size:.85rem;color:var(--nude2);background:#0e0b09}
+.petal-note{display:none}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav aria-label="Principal">
+  <b>Luana Gonçalves</b>
+  <a class="btn" href="#servicos">Agendar</a>
+</nav>
+
+<header id="hero">
+  <div class="fb" aria-hidden="true"></div>
+  <canvas id="c3d" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <p class="mono" aria-hidden="true">LG</p>
+    <h1>Dra. Luana Gonçalves</h1>
+    <p class="sub" style="margin-inline:auto">Estética Avançada &amp; Humanizada · Harmonização e Cuidados da Pele<br>Sorriso, Mato Grosso</p>
+    <div class="row">
+      <a class="btn" href="#servicos">Ver serviços e valores</a>
+      <a class="btn ghost" href="#agendar">Como agendar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="servicos">
+  <div class="wrap">
+    <h2>Nossos serviços</h2>
+    <p>Cuidar também é uma forma de amor. Escolha um ou mais serviços e envie o pedido de horário direto pelo WhatsApp.</p>
+    <p class="note" id="promo">Valores promocionais de Outubro Rosa, sujeitos a alteração. Pagamento em dinheiro ou Pix.</p>
+    <div class="grid" id="lista"></div>
+    <div class="bar" role="region" aria-label="Resumo do pedido">
+      <span id="resumo" aria-live="polite">Nenhum serviço escolhido ainda.</span>
+      <a class="btn rose" id="zap" href="#" aria-disabled="true">Agendar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap two">
+    <div>
+      <h2>Sobre a Dra. Luana</h2>
+      <p>Estética avançada e humanizada, com foco em harmonização e cuidados da pele, em Sorriso (MT).</p>
+      <p class="todo">[A PREENCHER] Texto de apresentação da Dra. Luana: formação, trajetória e filosofia de atendimento. Nenhuma certificação foi incluída por não termos a informação.</p>
+    </div>
+    <div class="ph sq" role="img" aria-label="Espaço reservado para foto da Dra. Luana">[A PREENCHER] Foto da Dra. Luana ou do espaço</div>
+  </div>
+</section>
+
+<section id="gal">
+  <div class="wrap">
+    <h2>Galeria de trabalhos</h2>
+    <p>Aqui entram as fotos reais de unhas, sobrancelhas, pele e cabelo.</p>
+    <div class="gg">
+      <div class="ph">[A PREENCHER] Foto 1</div><div class="ph">[A PREENCHER] Foto 2</div>
+      <div class="ph">[A PREENCHER] Foto 3</div><div class="ph">[A PREENCHER] Foto 4</div>
+    </div>
+    <p style="margin-top:18px">Mais trabalhos no Instagram: <a href="https://www.instagram.com/luanagoncalvesestetica/" target="_blank" rel="noopener"><b>@luanagoncalvesestetica</b></a></p>
+  </div>
+</section>
+
+<section id="agendar">
+  <div class="wrap">
+    <h2>Como agendar</h2>
+    <ol class="steps" style="margin-top:24px">
+      <li><b>Escolha</b><br>Marque os serviços que você quer na seção acima.</li>
+      <li><b>Envie</b><br>Toque em “Agendar pelo WhatsApp”. A mensagem já vai pronta com os serviços escolhidos.</li>
+      <li><b>Combine</b><br>A equipe responde para confirmar dia e horário.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="local">
+  <div class="wrap two">
+    <div>
+      <h2>Localização e contato</h2>
+      <dl style="margin-top:20px">
+        <div><dt>Endereço</dt><dd>Rua São Rafael, nº 312<br>Residencial Bel Valle<br>Sorriso, Mato Grosso</dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5567998531677" target="_blank" rel="noopener">(67) 99853-1677</a></dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/luanagoncalvesestetica/" target="_blank" rel="noopener">@luanagoncalvesestetica</a></dd></div>
+        <div><dt>Horário de atendimento</dt><dd class="todo">[A PREENCHER] Dias e horários</dd></div>
+      </dl>
+    </div>
+    <div class="ph sq" role="img" aria-label="Espaço reservado para o mapa">[A PREENCHER] Link ou mapa do Google Maps</div>
+  </div>
+</section>
+</main>
+<footer>Dra. Luana Gonçalves · LG Estética e Salão de Beleza · Sorriso, MT</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ===== DADOS EDITÁVEIS: ajuste nomes e valores aqui ===== */
+var SERVICOS=[
+ {n:"Designer de sobrancelhas com rena",p:"R$ 60,00",i:'<path d="M6 22c10-10 26-10 36 0M12 30c8 6 16 6 24 0"/><circle cx="24" cy="30" r="3"/>'},
+ {n:"Manicure e Pedicure",p:"R$ 60,00",i:'<rect x="17" y="22" width="14" height="20" rx="3"/><path d="M20 22v-8h8v8M22 14V8h4v6"/>'},
+ {n:"Limpeza de pele",p:"R$ 90,00",i:'<path d="M24 6C16 18 12 24 12 30a12 12 0 0024 0c0-6-4-12-12-24z"/><path d="M18 32a6 6 0 006 6"/>'},
+ {n:"Massagem relaxante",p:"R$ 120,00",i:'<ellipse cx="24" cy="38" rx="14" ry="4"/><ellipse cx="24" cy="29" rx="10" ry="4"/><ellipse cx="24" cy="21" rx="6" ry="3.5"/><path d="M20 12c-3-3 3-4 0-8M28 12c-3-3 3-4 0-8"/>'},
+ {n:"Selagem",p:"R$ 300,00",q:"a partir de",i:'<path d="M14 6c8 10-8 16 0 36M24 6c8 10-8 16 0 36M34 6c8 10-8 16 0 36"/>'},
+ {n:"Progressiva",p:"R$ 350,00",q:"a partir de",i:'<path d="M14 6v36M24 6v36M34 6v36"/><path d="M38 10l2-4 2 4-4 2z"/>'},
+ {n:"Micropigmentação",e:1},{n:"Tratamento capilar",e:1},{n:"Tratamento facial",e:1},
+ {n:"Massagem e estética corporal",e:1},{n:"Harmonização",e:1}
+];
+var ZAP="5567998531677";
+/* ===== LISTA + FLUXO WHATSAPP ===== */
+var box=document.getElementById("lista");
+SERVICOS.forEach(function(s,k){
+ var l=document.createElement("label");l.className="card";
+ var pr=s.e?'<span class="price q">Consulte pelo WhatsApp</span>':(s.q?'<small>'+s.q+'</small>':'')+'<span class="price">'+s.p+'</span>';
+ l.innerHTML='<input type="checkbox" value="'+k+'" aria-label="'+s.n+'"><span class="tick" aria-hidden="true"></span>'+
+  (s.i?'<svg class="ico" viewBox="0 0 48 48" aria-hidden="true">'+s.i+'</svg>':'')+'<h3>'+s.n+'</h3>'+pr;
+ box.appendChild(l);
+});
+var zap=document.getElementById("zap"),res=document.getElementById("resumo");
+function upd(){
+ var on=[].slice.call(box.querySelectorAll("input:checked")).map(function(i){return SERVICOS[i.value].n});
+ if(!on.length){res.textContent="Nenhum serviço escolhido ainda.";zap.href="#servicos";zap.setAttribute("aria-disabled","true");return}
+ res.textContent=on.length+(on.length>1?" serviços escolhidos: ":" serviço escolhido: ")+on.join(", ");
+ var msg="Olá, Dra. Luana! Gostaria de agendar um horário para: "+on.join(", ")+". Quais dias e horários você tem disponíveis?";
+ zap.href="https://wa.me/"+ZAP+"?text="+encodeURIComponent(msg);
+ zap.target="_blank";zap.rel="noopener";zap.setAttribute("aria-disabled","false");
+}
+box.addEventListener("change",upd);upd();
+zap.addEventListener("click",function(e){if(zap.getAttribute("aria-disabled")==="true"){e.preventDefault();res.textContent="Escolha pelo menos um serviço para enviar o pedido.";}});
+/* ===== INCLINAÇÃO 3D NOS CARTÕES (efeito de profundidade em CSS, não é WebGL) ===== */
+var rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(!rm&&matchMedia("(hover:hover)").matches){
+ box.addEventListener("pointermove",function(e){var c=e.target.closest(".card");if(!c)return;var r=c.getBoundingClientRect();
+  c.style.transform="rotateY("+(((e.clientX-r.left)/r.width-.5)*10)+"deg) rotateX("+(-((e.clientY-r.top)/r.height-.5)*10)+"deg)"});
+ box.addEventListener("pointerout",function(e){var c=e.target.closest(".card");if(c)c.style.transform=""});
+}
+/* ===== REVELAR AO ROLAR ===== */
+document.querySelectorAll("#sobre .wrap,#gal .wrap,#agendar .wrap,#local .wrap").forEach(function(el){el.classList.add("rv")});
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+ document.querySelectorAll(".rv").forEach(function(el){io.observe(el)})}else{document.querySelectorAll(".rv").forEach(function(el){el.classList.add("in")})}
+/* ===== CENA 3D REAL (Three.js): anéis de ouro, esfera de vidro e pétalas ===== */
+(function(){
+ var hero=document.getElementById("hero"),cv=document.getElementById("c3d");
+ try{
+  if(!window.THREE)throw 0;
+  var low=innerWidth<700||(navigator.hardwareConcurrency||4)<4;
+  var R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:!low});
+  R.setPixelRatio(Math.min(devicePixelRatio,low?1.5:2));
+  var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(45,1,.1,100);C.position.z=7;
+  S.add(new THREE.AmbientLight(0xffe6cf,.6));
+  var L1=new THREE.PointLight(0xffd9a0,1.4,30);L1.position.set(4,4,6);S.add(L1);
+  var L2=new THREE.PointLight(0xff5c9a,.9,30);L2.position.set(-5,-2,4);S.add(L2);
+  var gold=new THREE.MeshStandardMaterial({color:0xd4af6a,metalness:.95,roughness:.28});
+  var g=new THREE.Group();S.add(g);
+  var r1=new THREE.Mesh(new THREE.TorusGeometry(2.3,.035,16,160),gold);
+  var r2=new THREE.Mesh(new THREE.TorusGeometry(1.8,.025,16,160),gold);
+  r2.rotation.x=1.1;r1.rotation.y=.5;g.add(r1,r2);
+  var orb=new THREE.Mesh(new THREE.SphereGeometry(.9,48,48),new THREE.MeshStandardMaterial({color:0xfff1e6,metalness:.1,roughness:.05,transparent:true,opacity:.28}));
+  g.add(orb);
+  var N=low?24:48,P=[],pg=new THREE.CircleGeometry(.11,8),pm=new THREE.MeshStandardMaterial({color:0xe8689b,side:THREE.DoubleSide,roughness:.6});
+  for(var i=0;i<N;i++){var m=new THREE.Mesh(pg,pm);m.scale.set(1,1.6,1);
+   m.position.set((Math.random()-.5)*9,(Math.random()-.5)*7,(Math.random()-.5)*4);
+   m.userData={v:.004+Math.random()*.006,s:Math.random()*2,rx:Math.random()*.03,ry:Math.random()*.03};S.add(m);P.push(m)}
+  var mx=0,my=0,sy=0,run=true,t=0;
+  addEventListener("pointermove",function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+  addEventListener("scroll",function(){sy=Math.min(scrollY/innerHeight,1)},{passive:true});
+  function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();C.position.z=w<700?9.5:7}
+  size();addEventListener("resize",size);
+  function draw(){
+   t+=.01;
+   if(!rm){g.rotation.y=t*.4+mx*.8+sy*2;g.rotation.x=my*.5;r2.rotation.z=t*.5;orb.position.y=Math.sin(t*1.5)*.08;
+    P.forEach(function(m){var d=m.userData;m.position.y-=d.v;m.position.x+=Math.sin(t+d.s)*.003;m.rotation.x+=d.rx;m.rotation.y+=d.ry;if(m.position.y<-3.6)m.position.y=3.6})}
+   R.render(S,C);
+  }
+  draw();
+  if(!rm){(function loop(){if(run)draw();requestAnimationFrame(loop)})();
+   new IntersectionObserver(function(a){run=a[0].isIntersecting}).observe(hero)}
+ }catch(e){hero.classList.add("no3d");cv.style.display="none"}
+})();
+</script>
+</body>
+</html>
